@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>licodo</title>
+        <style>
+            #page {
+                
+            }
+
+            #hd, #ft {
+                height: 50px;
+                background: #666;
+                color: #eee;
+                text-align: center;
+            }
+
+            #bd {
+                overflow: hidden;
+                padding: 0 230px 0 190px;   
+            }
+            .main {
+                float: left;
+                width: 100%;
+            }
+            .sub {
+                float: left;
+                width: 190px;
+                background: orange;
+                margin-left: -100%;
+                position: relative;
+                left: -190px;
+            }
+            .extra {
+                float: left;
+                width: 230px;
+                margin-left: -230px;
+                background: lightgreen;
+                position: relative;
+                right: -230px;
+            }
+            .main-wrap {    margin: 0 230px 0 190px;}
+            .sub, .extra, .main {
+                padding-bottom: 5000px;
+                margin-bottom: -5000px; 
+            }
+        </style>
+    </head>
+    <body>
+        <div id="page">    
+            <div id="hd"></div>    
+                <div id="bd">        
+                    <div class="main">
+                        <div class="main-wraper">
+                        main
+                        <pre>
+.main {
+    float: left;
+    width: 100%;
+}
+                        </pre>
+                        </div>
+                    </div>        
+                    <div class="sub">
+                        SUB
+                        <pre>
+.sub {
+    float: left;
+    width: 190px;
+    background: orange;
+    margin-left: -100%;
+}
+                        </pre>
+                    </div>        
+                    <div class="extra">
+                        EXTRA
+                        <pre>
+.extra {
+    float: left;
+    width: 230px;
+    margin-left: -230px;
+    background: lightgreen;
+}
+                        </pre>
+                    </div>    
+                </div>   
+            <div id="ft"></div>
+        </div>
+    </body>   
+</html>

@@ -1,0 +1,115 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>实现垂直居中</title>
+        <style>
+            html, body {
+                height: 100%;
+                padding: 0;
+                margin: 0;
+            }
+            .column {
+                width: 19.5%;
+                height: 100%;
+                float: left;
+                background-color: #B0C953;
+                border-right: 2px dashed #fff;
+                position: relative;
+            }
+            
+            #wrapper1 {
+                height: 80%;
+                padding: 4em 10px 10px 40px;
+                display: table;
+            }
+            #cell1 {
+                display: table-cell;
+                vertical-align: middle;
+                background-color: #DDF879;
+            }
+            .content {
+                 color: #333;
+                 background-color: #fff;
+            }
+            #content1 {
+                padding: 10px;
+            }
+            #wrapper2 {
+                height: 100%;
+                background-color: #DDF879;
+            }
+            #content2 {
+                position: absolute;
+                height: 50px;
+                width: 160px;
+                top: 50%;
+                left: 50%;
+                margin-top: -25px;
+                margin-left: -80px;
+            }
+            #wrapper3 {
+                height: 100%;
+                background-color: #DDF879;
+            }
+            .floater {
+                float: left;
+                height: 50%;
+                margin-bottom: -25px;
+            }
+            #content3 {
+                height: 50px;
+                position: relative;
+                clear: both;
+            }
+            #wrapper4 {
+                height: 100%;
+                background-color: #DDF879;
+            }
+            #content4 {
+                height: 100px;
+                line-height: 100px; 
+            }
+        </style>
+    </head>
+    <body>
+        <div class="column"> 
+            <div id="wrapper1" >
+                <div id="cell1">
+                    <div class="content" id="content1">content is here</div>
+                </div>
+            </div>
+        </div>
+        <div class="column"> 
+            <div id="wrapper2" >
+                <div class="content" id="content2">content is here</div>
+            </div>
+        </div>
+        <div class="column"> 
+            <div id="wrapper3" >
+                <div class="floater"></div>
+                <div class="content" id="content3">content is here</div>
+            </div>
+        </div>
+        
+        <div class="column"> 
+            <div id="wrapper4" >
+                <div class="content" id="content4">content is here</div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+    </body>
+   
+</html>

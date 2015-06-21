@@ -1,0 +1,125 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>licop</title>
+    </head>
+    <body>
+        
+    </body>
+    <script type="text/javascript">
+        /*
+        //example 1
+        function fun() {
+            var a = 2;
+
+            function bar() {
+                console.log(a);
+            } 
+
+            bar();
+        }
+        fun();
+
+        //example 2
+        function fun() {
+            var a = 2;
+
+            function bar() {
+                console.log(a);
+            }
+
+            return bar;
+        }
+
+        var baz = fun();
+        baz();
+
+        //example 3
+
+        function fun() {
+            var a = 2;
+
+            function bar() {
+                console.log(a);
+            }
+            foo(bar);
+        }
+        
+        function foo(fun) {
+            fun();
+        }
+        foo();
+
+        //example 4
+        var fn;
+        function fun() {
+            var a = 2;
+
+            function bar() {
+                console.log(a);
+            }
+            fn = bar;
+        }
+
+        function baz() {
+            fun();
+        }
+        fun();
+        baz();
+        */
+        /*
+        for (var i = 0; i < 5; i++) {
+            setTimeout(function() {
+                document.write(i);
+            }, i*2000);
+        };
+        */
+        /*
+        for (var i = 0; i < 5; i++) {
+            (function (j) {
+                setTimeout(function() {
+                    document.write(j);
+                }, j*1000); 
+            })(i);
+        };
+        */
+        //闭包和块作用域联手,还不支持浏览器，支持服务器端
+        //let 用于声明块作用域的变量
+        for (let i = 0; i < 5; i++) {
+            setTimeout(function timer() {
+                document.write(i);
+            }, i*1000);
+        }
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</html>

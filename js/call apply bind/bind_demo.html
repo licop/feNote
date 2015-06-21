@@ -1,0 +1,71 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>licop</title>
+    </head>
+    <body>
+        
+    </body>
+    <script type="text/javascript">
+    /**
+        var obj = {
+            a : 1,
+            b : 2,
+            getCount : function() {
+                var c = 3, d = 4;
+                console.log(this.a + this.b + c + d);
+            }
+        }
+
+        window.a = window.b = 0;
+        obj.getCount();
+        //fuc的this指向了window
+        var fuc = obj.getCount;
+        fuc();
+    */
+        var obj = {
+            a : 1,
+            b : 2,
+            getCount : function(c, d) {
+                console.log(this.a + this.b + c + d);
+            }
+        }
+
+        window.a = window.b = 0;
+        obj.getCount(1, 2);
+        // 使用bind来改变this的指向
+        var fuc = obj.getCount.bind(obj, 3, 4);
+        fuc();
+        obj.getCount.call(obj, 3, 4);
+        // 将传入的参数转话为数组;
+        function list() {
+            return Array.prototype.slice.call(arguments);
+        }
+
+        //console.log(list({length:2,0:'first',1:'second'}));
+
+        var my_object = {
+            '0': 'zero',
+            '1': 'one',
+            '2': 'two',
+            '3': 'three',
+            '4': 'four',
+            length: 5
+        };
+
+        var sliced = Array.prototype.slice.call(my_object,0);
+        console.log(sliced);
+
+
+
+
+
+
+
+
+    </script>
+</html>

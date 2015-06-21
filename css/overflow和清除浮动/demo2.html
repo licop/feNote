@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>licodo</title>
+        <style>
+            h2 {
+                margin: 0 auto;
+                text-align: center;
+            }
+            div {
+                padding: 15px 20px;
+                font-size: 14px;
+                color: #333;
+            }
+            .warp {
+                border: 1px solid blue;
+                width: 600px;
+                margin: 30px auto 5px;
+                background: #F5F5F5;
+            }
+            .main {
+                height: 60px;
+                width: 50%;
+                background: #FFE3D7;
+            }
+            .side {
+                width: 20%;
+                background: lightblue;
+            }
+            .footer {
+                border: 1px solid #CCC;
+                background: #EEE;
+                width: 600px;
+                margin: 5px auto 30px;
+            }
+            .left {
+                float: left;
+            }
+            .clear {
+                clear: both;
+            }
+            .clearfix:after {
+                content: ',';
+                display: block;
+                height: 0;
+                visibility: hidden;
+                clear: both;
+            }
+            /**由于IE6-7不支持:after，使用 zoom:1触发 hasLayout**/
+            .clearfix {
+                *zoom: 1;
+            }
+            /**通过设置父元素overflow值设置为hidden，auto；在IE6中还需要触发 hasLayout ，例如 zoom：1；**/
+            .float2 {
+                /**overflow: auto;**/
+                overflow: hidden;
+                *zoom: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <h2>清除浮动的几种方法</h2>
+            <div class="warp">
+                <div class="main left">.main: 很抱歉我没能把warp称高（float: left）</div>
+                <div class="side left">.side: 我也浮动了（float： rigth）</div>
+            </div>
+            <div class="footer clear">
+                .footer：我通过设置 clear:both 清除浮动,虽然位置正确了,但是 warp 的高度没变,有些不爽
+            </div>
+            <!---通过伪元素清除浮动-->
+            <div class="warp clearfix">
+                <div class="main left">.main：warp自己闭合浮动了，所以footer不用再清除浮动了(float:left)</div>
+                <div class="side left">.side：我也浮动了(float:left)</div>
+            </div>
+            <div class="footer">
+                .footer：这次 warp 人品爆发了, 通过 .clearfix 已经闭合浮动了
+            </div>
+            <!--使用overflow-->
+            <div class="warp float2">
+                <div class="main left">.main：warp自己闭合浮动了，所以footer不用再清除浮动了(float:left)</div>
+                <div class="side left">.side：我也浮动了(float:left)</div>
+            </div>
+            <div class="footer">
+                .footer：这次 warp 人品爆发了, 通过 overflow 已经闭合浮动了
+            </div>
+            <!--使用加入空标签-->
+            <div class="warp float3">
+                <div class="main left">.main：warp自己闭合浮动了，所以footer不用再清除浮动了(float:left)</div>
+                <div class="side left">.side：我也浮动了(float:left)</div>
+                <div class="clear"></div>
+            </div>
+            <div class="footer">
+                .footer：这次 warp 人品爆发了, 加入空标签已经闭合浮动了
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </body>   
+</html>
