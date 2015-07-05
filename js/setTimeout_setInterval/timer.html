@@ -1,0 +1,23 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>licop</title>
+    </head>
+    <body>
+        
+    </body>
+    <script type="text/javascript">
+        function foo() {
+            this.value = 12;
+            this.method = function() {
+                console.log(this.value);
+            }
+            setTimeout(this.method, 500);
+        } 
+        new foo();
+    </script>
+</html>
