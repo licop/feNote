@@ -1,0 +1,42 @@
+<!DOCTYPE HTML> 
+<html lang="zh-CN">
+    <head>
+        <meta charset = 'UTF-8'>
+        <title>关于this</title>
+    </head>
+    <body>
+        
+    </body>
+    <script>
+        var a = 2;
+
+        function foo() {
+            console.log(this.a);
+        }
+        //this 的默认绑定， this指向全局变量
+        foo();
+         
+        var obj = {
+            a: 3,
+            foo: foo,
+        }
+        //隐式绑定，this绑定到obj
+        obj.foo();
+        //bar 引用的是foo函数本身，bar()其实是不加任何修饰的函数调用，这是this的默认绑定
+        var bar = obj.foo;
+        bar();  //2
+        //内置函数一样会使“绑定丢失”
+        //setTimeout(obj.foo, 1000);  //2
+        //用call和apply函数显示绑定
+        foo.call(obj); //3
+        
+        // 硬绑定
+        var baz = function() {
+            foo.call(obj);
+        }
+        baz(); //3
+
+        
+
+    </script>
+</html>

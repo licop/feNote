@@ -24,7 +24,6 @@ call 方法可以用来代替另一个对象调用一个方法。call 方法可�
 如果没有提供 thisObj 参数，那么 Global 对象被用作 thisObj。
 </pre>
 说的通俗一点call和apply都是为了改变某个函数值的context上下文而存在的，换句话说就是改变函数内部的指向。
-
 其实如果将一个函数按照正常方式调用有三种方法
 <pre>
 //一般调用方法
@@ -37,6 +36,8 @@ func2.apply(this, [arr1, arr2]);
 </pre>
 
 其中this是你想指定的上下文，可以是任何javascript对象，call 需要把参数按顺序传递进去，而 apply 则是把参数放在数组里。
+
+如果向call和apply函数的第一个参数传入一个原始值（字符串类型、布尔类型、数字类型）来当作this的绑定对象，这个原始值会被转化为对象形式（也就是new String()、new Boolean()或者new Number()这通常被称为‘装箱’）；
 
 ####应用
 

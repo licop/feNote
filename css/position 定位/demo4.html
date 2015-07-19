@@ -1,0 +1,20 @@
+<!DOCTYPE HTML> 
+<html lang="zh-CN">
+    <head>
+        <meta charset = 'UTF-8'>
+        <title>position 定位</title>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+         <div style="position: relative; width: 25em; border: 1px dotted;">
+         Computed values are processed as far as possible without formatting the document. Some values, however, can only be determined when the document is being laid out. For example, if the width of an element is set to be a <span style="position: absolute;top:0px;left:0px;right:auto;width:auto;background:silver;">certain percentage</span>sop of its containing block, the width cannot be determined until the width of the containing block has been determined.
+         </div>
+         <!-过度受限的情况下会忽略right的值-->
+         <div style="position: relative; width: 25em; border: 1px dotted;">
+         Computed values are processed as far as possible without formatting the document. Some values, however, can only be determined when the document is being laid out. For example, if the width of an element is set to be a <span style="position:absolute;top:0px;left:1em;right:10em;width:10em;margin-left:2em;background:silver;">certain percentage</span>sop of its containing block, the width cannot be determined until the width of the containing block has been determined.
+         </div>
+    </body>
+    
+</html>

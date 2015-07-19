@@ -1,0 +1,78 @@
+<!DOCTYPE HTML> 
+<html lang="zh-CN">
+    <head>
+        <meta charset = 'UTF-8'>
+        <title>如何进行事件处理</title>
+        <style>
+            .on {
+                background: #f6f;
+            }
+            .cover {
+                height: 200px; 
+                width: 200px; 
+                position: absolute; 
+                background: #6ff; 
+            }
+        </style>
+    </head>
+    <body>
+        <div id="pos" class="cover"></div>
+    </body>
+    <script>
+        var addEvent = function(element, type, listener) {
+            type = type.replace(/^on/i, '').toLowerCase();
+            
+            if (element.addEventListener) {
+                element.addEventListener(type, listener, false);
+            } else if (element.attachEvent) {
+                element.attachEvent('on' + type, listener);
+            } else {
+                element["on" + type] = listener;
+            }
+        } 
+        var addEvent1 = function() {
+
+        }
+
+
+        /**
+        function handleClick (event) {
+            var pos = document.getElementById('pos');
+            pos.style.left = event.clientX + 'px';
+            pos.style.top = event.clientY + 'px';
+        }
+        */
+
+        //拆分应用逻辑
+        /*
+        var app = {
+            handleClick: function(event) {
+                this.showPos(event);
+            },
+            showPos: function(event) {
+                var pos = document.getElementById('pos');
+                pos.style.left = event.clientX + 'px';
+                pos.style.top = event.clientY + 'px';
+            }
+        }
+        */
+        // 好的写法
+        var app = {
+            handleClick: function(event) {
+                event.preventDefault();
+                event.stopPropagation();
+                this.showPos(event.clientX, event.clientY);
+            },
+            showPos: function(x, y) {
+                var pos = document.getElementById('pos');
+                pos.style.left = x+ 'px';
+                pos.style.top = y + 'px';
+            }
+        }
+        app.showPos(100,100);
+        addEvent1(document, 'click', function() {
+            app.handleClick(event);
+        });
+
+    </script>
+</html>

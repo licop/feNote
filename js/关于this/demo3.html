@@ -1,0 +1,66 @@
+<!DOCTYPE HTML> 
+<html lang="zh-CN">
+    <head>
+        <meta charset = 'UTF-8'>
+        <title>关于this</title>
+    </head>
+    <body>
+        
+    </body>
+    <script>
+
+        function foo(something) {
+          console.log(this.a, something); // 2,3
+          return this.a + something;
+        }
+        /*
+        function bind(fun, obj) {
+            //利用硬绑定创建一个包裹函数
+            return function() {
+                return fun.apply(obj, arguments);
+            };
+        }
+        */
+        
+        var obj = {
+            a: 2,
+        }
+
+        //var bar = bind(foo, obj);
+        //var b = bar(3);
+        //console.log(b);//5
+        //利用ES5中提供的内置方法Function.prototype.bind
+        var bar = foo.bind(obj);
+        console.log(bar(3));  //2,3   5
+        //foo.call(obj, 3);
+
+        //new绑定
+        function foo1(something) {
+            this.a = something;
+        }
+        var baz = new foo1(2);
+        console.log(baz.a);
+        // 此时null使this指向全局变量
+        function foo2(a, b, c) {
+            console.log("a: " + a + " b:" + b + " c:" + c);
+        }
+        var bar = foo2.bind(null, 2, 3);
+        bar(4);
+        //更安全的做法传入一个空委托对象  ø  option＋o；
+        var ø = Object.create(null);
+        var baz = foo2.bind(ø, 2, 3);
+        baz(3);
+
+        function cloneObj(obj) {
+            return JSON.parse(JSON.stringify(obj));
+        }
+        
+        
+
+
+
+
+
+        
+    </script>
+</html>

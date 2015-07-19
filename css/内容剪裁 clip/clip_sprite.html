@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>licodo</title>
+        <style>
+            .clip_a {
+               display: block;
+               height: 32px;
+               width: 142px;
+            }
+            .clip_a img {
+                border: 0;
+                position: absolute;
+                clip: rect(0, 142px, 32px, 0);
+            }
+            .clip_a:hover img {
+                margin-top: -32px;
+                clip: rect(32px, 142px, 64px, 0);
+            }
+        </style>
+    </head>
+    <body>
+        <a href="javascript:" class="clip_a">
+            <img src="link_sprite.png" />
+        </a>
+    </body>   
+</html>

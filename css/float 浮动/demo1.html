@@ -1,0 +1,43 @@
+<!DOCTYPE HTML> 
+<html lang="zh-CN">
+    <head>
+        <meta charset = 'UTF-8'>
+        <title>float 浮动</title>
+        <style>
+            p img {
+                float: right;
+                margin: 10px;
+            }
+            /****浮动可以使一个行内元素，变成一个块级元素****/
+            p a {
+                float: left;
+                display: block;
+                height: 30px;
+                width: 100px;
+            }
+            p h2 {
+                float: left;
+            }
+            div h4{
+                float: left;
+                margin: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>text 1</h1>
+        <p>
+            CSS的float属性可以将一个元素从正常的文档流中取出，然后安放到它所在容器的的左端或者右端，并且让其他的文本和行内元素围绕它安放。一个 浮动元素（floating element） 是一个float属性计算值不是none的元素。<img src="img/github.png" />CSS的float属性可以将一个元素从正常的文档流中取出，然后安放到它所在容器的的左端或者右端，并且让其他的文本和行内元素围绕它安放。一个 浮动元素（floating element） 是一个float属性计算值不是none的元素。
+        </p>
+        <p>
+            CSS的float属性可以将一个元素从正常的文档流中取出，然后安放到它所在容器的的左端或者右端，并且让其他的文本和行内元素围绕它安放。一个 浮动元素（floating element） 是一个float属性计算值不是none的元素。<a href = 'http://www.baidu.com'>百度</a>CSS的float属性可以将一个元素从正常的文档流中取出，然后安放到它所在容器的的左端或者右端，并且让其他的文本和行内元素围绕它安放。一个 浮动元素（floating element） 是一个float属性计算值不是none的元素。
+        </p>
+        <div>
+            <h4>HELLO!</h4>
+            This is some text. This is some text. This is some text.
+            This is some text. This is some text. This is some text.
+            This is some text. This is some text. This is some text.
+            This is some text. This is some text. This is some text.
+        </div>
+    </body>   
+</html>

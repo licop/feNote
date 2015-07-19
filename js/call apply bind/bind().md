@@ -38,7 +38,22 @@ bind和call, apply一样都是为了改变某个函数运行时的上下文（co
  
  bind是function的一个函数的扩展方法，但是不兼容IE6-8。
  
- 
+##### 使用bind进行柯里化
+<pre>
+		function f(y,z){
+		    return this.x+y+z;
+		}
+		var m=f.bind({x:1},2); 
+		console.log(m(3));  // 6
+</pre>
+
+这是因为 bind()方法会把传入它的第一个实参绑定给f函数体内的 this，从第二个实参起，将依此传递给原始函数，因此 {x:1}传递给this ,2传递给形参y，m(3) 调用时的3 传递给形参z。
+
+其实这个例子 f() 函数能够处理部分参数，分步计算 （ bind() 时处理了参数x，和参数y，调用 m(3)时处理了参数z ）的过程其实是一个典型的Curry过程(Currying)
+
+[bind](http://www.cnblogs.com/zztt/p/4122352.html)
+
+
 #####bind方法和call方法的区别
  
  [Why did ECMAScript 5 add .bind()?](http://stackoverflow.com/questions/9625600/why-did-ecmascript-5-add-bind)

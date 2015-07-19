@@ -1,0 +1,79 @@
+<!DOCTYPE HTML> 
+<html lang="zh-CN">
+    <head>
+        <meta charset = 'UTF-8'>
+        <title>position 定位</title>
+        <style>
+            #contain {
+                top: 0;
+                left: 30px;
+                height: 400px;
+                width: 400px;
+                border: 1px solid #333;     
+                /***如果子元素设置为relative，则相对于包含块的内容边界定位，
+                如果子元素设置为absolute，如果是块级元素则相对于包含块的边框定位，
+                如果是行内元素则相对于包含块的内容边界定位***/
+                /**padding: 40px; ***/
+            }
+            #zi1 {
+                top: 0px;
+                left: 0px;
+                height: 100px;
+                width: 100px;
+                position: relative;
+                background: #eee;
+            }
+            #zi2 {
+                top: 0px;
+                left: 60px;
+                height: 100px;
+                width: 100px;
+                position: absolute;
+                background: #e33;
+            }
+            #zi3 {
+                top: 40px;
+                left: 30px;
+                height: 100px;
+                width: 100px;
+                position: absolute;
+                background: #eee;
+            }
+            #zi4 {
+                top: 78px;
+                left: 50px;
+                height: 100px;
+                width: 100px;
+                position: absolute;
+                background: #f88;
+            }
+            #contain1 {
+                position: relative;
+                /***position: relative; 不设置此项元素相对于body元素定位，设置此项元素相对于contain元素定位***/
+                top: 0;
+                left: 30px;
+                height: 400px;
+                width: 400px;
+                border: 1px solid #333; 
+            }
+            #zi5 {
+                /***position: absolute;  当行内元素设置为abosule属性时会变成块级元素***/
+                height: 100px;
+                width: 100px;
+                background: #3ee;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="contain">
+            <div id="zi1"></div>
+            <div id="zi2"></div>
+        </div>
+        <div id="contain1">
+            <div id="zi3"></div>
+            <div id="zi4"></div>
+            <span id="zi5"></span>
+        </div>
+    </body>
+    
+</html>

@@ -1,6 +1,7 @@
 ### http status code
 
 使用ASP.NET/PHP/JSP 或者javascript都会用到http的不同状态，一些常见的状态码为： 
+
 200 – 服务器成功返回网页 
 
 302 - Found (临时移动)

@@ -1,0 +1,32 @@
+<!DOCTYPE HTML> 
+<html lang="zh-CN">
+    <head>
+        <meta charset = 'UTF-8'>
+        <title>line-height</title>
+        <style>
+            body {
+                font-size: 10px;
+            }
+            #div1 {
+                line-height: 1em;
+                width: 200px;
+            }
+            #div2 {
+                line-height: 1.5;
+                width: 200px;
+            }
+            div p {
+                font-size: 18px;
+            }
+        </style>
+    </head>
+    <body>
+         <div id = "div1">
+             <p>这个段落的字体大小是18px, 但是继承的行高却只有10px, 这可能导致行间距是负值，因而导致文本重叠</p>
+         </div>
+         <div id = "div2">
+             <p>使用缩放因子，各元素用自己的font-size值计算行高，这里的行高为18*1.5 = 27</p>
+         </div>
+    </body>
+    
+</html>

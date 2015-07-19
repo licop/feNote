@@ -1,0 +1,47 @@
+<!DOCTYPE HTML> 
+<html lang="zh-CN">
+    <head>
+        <meta charset = 'UTF-8'>
+        <title>关于this</title>
+    </head>
+    <body>
+        
+    </body>
+    <script>
+        function identify() {
+            return this.name.toUpperCase();
+        }
+        function speaker() {
+            var greeting = 'Hello, I am ' + identify.call(this);
+            console.log(greeting);
+        }
+        var me = {
+            name: 'licop',
+        }
+        var you = {
+            name: 'jing',   
+        }
+        //speaker.call(me);  //Hello, I am LICOP;
+        //speaker.call(you); //Hello, I am JING;
+
+
+        //this 不是指向函数本身
+        function foo(num) {
+            console.log('foo:' + num);
+            //this 并没有指向foo本身， 这句话创造了一个全局变量
+            this.count++;
+
+            console.log(this.count); // NaN
+        }
+        foo.count = 0;
+        for (var i = 0; i < 5; i++) {
+            //foo(i);
+            //也可以强制this指向foo函数对象
+            foo.call(foo, i);
+        }
+        //console.log(foo.count);
+        
+        
+
+    </script>
+</html>

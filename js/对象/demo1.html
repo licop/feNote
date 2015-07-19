@@ -1,0 +1,51 @@
+<!DOCTYPE HTML> 
+<html lang="zh-CN">
+    <head>
+        <meta charset = 'UTF-8'>
+        <title>关于this</title>
+    </head>
+    <body>
+        
+    </body>
+    <script>
+        //可以深度复制一个对象
+        function cloneObj(obj) {
+            return JSON.parse(JSON.stringify(obj));
+        }
+
+        var myObj = {
+            a: 2,
+        }
+        //undefined
+        console.log(myObj.b);
+        //抛出一个ReferceError错误
+        //console.log(b);
+
+        Object.defineProperty(
+            myObj,
+            "b",
+            {
+                enumerable: true,
+                value: 3,
+            }
+        );
+        Object.defineProperty(
+            myObj,
+            "c",
+            {
+                enumerable: false,
+                value: 4,
+            }
+        );
+        //返回一个数组，包括可枚举的
+        console.log(Object.keys(myObj));
+        //返回一个数组，无论它是否可枚举
+        console.log(Object.getOwnPropertyNames(myObj));
+
+
+
+
+
+        
+    </script>
+</html>
